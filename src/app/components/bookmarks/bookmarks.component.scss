@@ -1,0 +1,52 @@
+.bookmarks-wrapper {
+    height: 100%;
+    padding-top: 100px;
+
+    .bookmark-tiles-container {
+
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+
+        .bookmark-tile-box {
+            cursor: pointer;
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            height: 100px;
+            background-color: rgba(black, 0.6);
+            backdrop-filter: blur(20px);
+            border-radius: 10px;
+            transition: .3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    
+            img {
+                height: 50px;
+                max-width: 32px;
+            }
+
+            .tile-text {
+                color: white;
+                font-size: 15px;
+            }
+
+           &:hover {
+                transform: scale(1.05);
+                backdrop-filter: blur(100px);
+                transition-delay: all .2s;
+           }
+        }
+
+       
+    }
+
+  
+}
+
+.container {
+    max-width: 850px;
+    margin: auto;
+}

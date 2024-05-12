@@ -1,0 +1,25 @@
+<div class="image-slider" cdkDrag>
+  <div class="images">
+    <img
+      [src]="images[currentIndex].url"
+      class="active"
+      alt=""
+      (contextmenu)="setBackground($event)"
+    />
+  </div>
+  <div class="thumbnails">
+    <img
+      *ngFor="let image of images; let i = index"
+      [src]="image.url"
+      alt=""
+      (click)="selectImage(i)"
+      [class.active]="i === currentIndex"
+    />
+  </div>
+  <div class="back-btn">
+    <i class="material-symbols-outlined"> arrow_back </i>
+  </div>
+  <div class="next-btn" (click)="nextImage()">
+    <i class="material-symbols-outlined"> arrow_forward </i>
+  </div>
+</div>

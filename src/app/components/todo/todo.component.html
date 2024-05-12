@@ -1,0 +1,28 @@
+<div class="todo-wrapper active">
+  <div class="example-box">
+    <div class="container" cdkDrag>
+      <div *ngFor="let todo of todos; trackBy: trackById">
+        <div class="todo-item" [ngClass]="{ completed: todo.completed }">
+          <div class="check-box" (click)="toggleCompleted(todo)">
+            <i class="material-icons-outlined">check</i>
+          </div>
+          <p
+            class="todo-text"
+            *ngIf="todo.editing !== true"
+            (click)="startEditing(todo)"
+          >
+            {{ todo.text }}
+          </p>
+          <input
+            class="todo-input"
+            type="text"
+            *ngIf="todo.editing === true"
+            [value]="todo.text"
+            (blur)="finishEditing(todo, $event)"
+            (keyup.enter)="finishEditing(todo, $event)"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

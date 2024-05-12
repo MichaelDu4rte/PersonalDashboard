@@ -1,0 +1,37 @@
+<div class="tabs-container">
+  <div
+    [routerLink]="'bookmarks'"
+    routerLinkActive="active"
+    class="tab-box"
+    (click)="handleTabClick('bookmarks')"
+  >
+    <div class="tab-title">
+      <i class="material-icons-outlined">bookmarks</i>
+    </div>
+  </div>
+  <div
+    [routerLink]="'todo'"
+    routerLinkActive="active"
+    class="tab-box"
+    (click)="handleTabClick('todo')"
+  >
+    <div class="tab-title">
+      <i class="material-icons-outlined">check</i>
+    </div>
+  </div>
+  <div
+    class="tab-box"
+    [routerLink]="'gallery'"
+    routerLinkActive="active"
+    (click)="handleTabClick('gallery')"
+  >
+    <div class="tab-title">
+      <i class="material-symbols-outlined">collections_bookmark </i>
+    </div>
+  </div>
+  <div class="tab-box">
+    <div class="tab-title">
+      <i class="material-icons-outlined">bookmarks</i>
+    </div>
+  </div>
+</div>

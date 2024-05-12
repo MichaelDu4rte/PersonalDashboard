@@ -1,0 +1,89 @@
+
+.todo-wrapper {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    margin: auto;
+    overflow: hidden;
+    z-index: 1;
+    
+    opacity: 0; /* Começa transparente */
+    transform: scale(0.8); /* Começa ligeiramente reduzido */
+    transition: all 0.5s ease, transform 0.5s ease; /* Transições adicionais */
+    animation: animationUI 0.5s ease-in-out forwards; /* Animação */
+   
+    .container {
+        display: inline-flex;
+        width: auto;
+        position: relative;
+        flex-direction: column;
+        background-color: rgba(white, 1);
+        backdrop-filter: blur(20px);
+        padding: 30px;
+        margin: 0 auto;
+        border-radius: 20px;
+        box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
+
+
+        .todo-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+           
+            margin-bottom: 10px;
+       
+            .todo-input {
+                width: 100%;
+                border-radius: 10px;
+                padding: 5px;
+                border: 1px solid black;
+            }
+
+           .check-box {
+                cursor: pointer;
+                font-size: 5px;
+                padding: 4px;
+                border: 2px solid rgba(0, 0, 0, 0.5);
+                border-radius: 50%;
+                color: white;
+                transition: all .2s linear;
+          
+
+                i {
+                    font-size: 18px;
+                    opacity: 0;
+                }
+
+                &:hover {
+                   border-color: transparent;
+                   background-color: rgba(rgb(48, 78, 245), 0.55);
+
+                   i {
+                    opacity: 1;
+                   }
+                 }
+           }
+
+           &.completed {
+                .todo-text {
+                    color: rgba(black, 0.7);
+                    text-decoration: line-through;
+                }
+
+                .check-box {
+                    border-color: transparent;
+                    background-color: rgba(rgb(48, 78, 245), 0.55);
+ 
+                    i {
+                     opacity: 1;
+                    }
+                }
+           }
+        }
+
+   
+     }
+}
+
+
