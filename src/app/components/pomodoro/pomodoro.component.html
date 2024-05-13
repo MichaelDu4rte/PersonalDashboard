@@ -1,0 +1,37 @@
+<div class="pomodo-wrapper" cdkDrag>
+  <div class="pomodoro-container">
+    <button class="btn btn-timer btn-focus" id="focus" (click)="focusButton()">
+      Focus
+    </button>
+    <button class="btn btn-break" id="break" (click)="shortBreakButton()">
+      Break
+    </button>
+  </div>
+
+  <div class="time-btn-wrapper">
+    <span class="time">{{ pomodoroTime }}</span>
+
+    <div class="pomodoro-config">
+      <label>Change Time</label>
+      <input
+        type="text"
+        [value]="pomodoroTime"
+        (input)="updatePomodoroTime($event)"
+        maxlength="5"
+        required
+      />
+    </div>
+
+    <div class="time-btn-container">
+      <button
+        class="btn-start show"
+        (click)="startTimer()"
+        [class.hide]="timerRunning"
+      >
+        Start
+      </button>
+      <button class="btn-pause hide" (click)="pauseTimer()">Pause</button>
+      <button class="btn-reset hide" (click)="resetTimer()">Reset</button>
+    </div>
+  </div>
+</div>

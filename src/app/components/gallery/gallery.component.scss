@@ -11,6 +11,10 @@
     border-radius: 20px;
     overflow: hidden;
 
+    opacity: 0; /* Começa transparente */
+    animation: animationUI 0.5s ease-in-out forwards; /* Animação */
+
+
     .images img {
         position: absolute;
         width: 100%;
@@ -22,6 +26,7 @@
         transition: all .3s;
         border-radius: 20px;
         background-color: #fff;
+
 
 
         &.active {

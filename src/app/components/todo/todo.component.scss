@@ -2,15 +2,13 @@
 .todo-wrapper {
     display: flex;
     justify-content: center;
-    height: 100%;
     margin: auto;
-    overflow: hidden;
     z-index: 1;
     
     opacity: 0; /* Começa transparente */
-    transform: scale(0.8); /* Começa ligeiramente reduzido */
-    transition: all 0.5s ease, transform 0.5s ease; /* Transições adicionais */
     animation: animationUI 0.5s ease-in-out forwards; /* Animação */
+    transform: scale(1);
+
    
     .container {
         display: inline-flex;

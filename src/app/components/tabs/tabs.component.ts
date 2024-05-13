@@ -1,13 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
-import {CdkDrag, DragDropModule} from '@angular/cdk/drag-drop';
+import {CdkDrag} from '@angular/cdk/drag-drop';
 
 
 @Component({
   selector: 'app-tabs',
   standalone: true,
-  imports: [CommonModule, RouterModule, CdkDrag, DragDropModule],
+  imports: [CommonModule, RouterModule, CdkDrag],
   templateUrl: './tabs.component.html',
   styleUrl: './tabs.component.scss'
 })

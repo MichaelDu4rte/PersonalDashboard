@@ -19,6 +19,18 @@
       <i class="material-icons-outlined">check</i>
     </div>
   </div>
+
+  <div
+    class="tab-box"
+    [routerLink]="'pomodoro'"
+    routerLinkActive="active"
+    (click)="handleTabClick('pomodoro')"
+  >
+    <div class="tab-title">
+      <i class="material-symbols-outlined">timer</i>
+    </div>
+  </div>
+
   <div
     class="tab-box"
     [routerLink]="'gallery'"
@@ -27,11 +39,6 @@
   >
     <div class="tab-title">
       <i class="material-symbols-outlined">collections_bookmark </i>
-    </div>
-  </div>
-  <div class="tab-box">
-    <div class="tab-title">
-      <i class="material-icons-outlined">bookmarks</i>
     </div>
   </div>
 </div>
