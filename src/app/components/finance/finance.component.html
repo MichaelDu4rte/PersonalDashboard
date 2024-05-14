@@ -1,0 +1,101 @@
+<div class="finance-wrapper">
+  <div class="finance-container">
+    <div class="finance-sub-container">
+      <div class="total-amount-container" cdkDrag>
+        <svg width="24px" fill="currentColor" viewBox="0 0 24 24" cdkDragHandle>
+          <path
+            d="M10 9h4V6h3l-5-5-5 5h3v3zm-1 1H6V7l-5 5 5 5v-3h3v-4zm14 2l-5-5v3h-3v4h3v3l5-5zm-9 3h-4v3H7l5 5 5-5h-3v-3z"
+          ></path>
+          <path d="M0 0h24v24H0z" fill="none"></path>
+        </svg>
+        <h3>Budget</h3>
+        <p class="hide error" id="budget-error">
+          Value cannot be empty or negative
+        </p>
+        <input
+          type="number"
+          name=""
+          id="total-number"
+          placeholder="Enter total Amount"
+          [(ngModel)]="totalAmount"
+        />
+        <button class="submit" id="total-amount-btn" (click)="updateAmount()">
+          Set Budget
+        </button>
+      </div>
+      <div class="user-amount-container" cdkDrag>
+        <svg width="24px" fill="currentColor" viewBox="0 0 24 24" cdkDragHandle>
+          <path
+            d="M10 9h4V6h3l-5-5-5 5h3v3zm-1 1H6V7l-5 5 5 5v-3h3v-4zm14 2l-5-5v3h-3v4h3v3l5-5zm-9 3h-4v3H7l5 5 5-5h-3v-3z"
+          ></path>
+          <path d="M0 0h24v24H0z" fill="none"></path>
+        </svg>
+        <h3>Expenses</h3>
+        <p class="hide error" id="product-title-error">Value cannot be empty</p>
+        <input
+          type="text"
+          class="product-title"
+          id="product-title"
+          placeholder="Enter Title of Product"
+          [(ngModel)]="newItemTitle"
+        />
+        <input
+          type="number"
+          id="user-amount"
+          placeholder="Enter Cost Of Product"
+          [(ngModel)]="newItemAmount"
+        />
+        <button class="submit" id="check-amount" (click)="addItem()">
+          Check Amount
+        </button>
+      </div>
+      <div class="output-container flex-space" cdkDrag>
+        <svg width="24px" fill="currentColor" viewBox="0 0 24 24" cdkDragHandle>
+          <path
+            d="M10 9h4V6h3l-5-5-5 5h3v3zm-1 1H6V7l-5 5 5 5v-3h3v-4zm14 2l-5-5v3h-3v4h3v3l5-5zm-9 3h-4v3H7l5 5 5-5h-3v-3z"
+          ></path>
+          <path d="M0 0h24v24H0z" fill="none"></path>
+        </svg>
+        <div>
+          <p>Total Budget</p>
+          <span id="amount">{{ amount }}</span>
+        </div>
+        <div>
+          <p>Total Expense</p>
+          <span id="expense-value">{{ getTotalExpense() }}</span>
+        </div>
+        <div>
+          <p>Total Balance</p>
+          <span id="balance-amount">{{ balance }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="list" cdkDrag>
+    <svg width="24px" fill="currentColor" viewBox="0 0 24 24" cdkDragHandle>
+      <path
+        d="M10 9h4V6h3l-5-5-5 5h3v3zm-1 1H6V7l-5 5 5 5v-3h3v-4zm14 2l-5-5v3h-3v4h3v3l5-5zm-9 3h-4v3H7l5 5 5-5h-3v-3z"
+      ></path>
+      <path d="M0 0h24v24H0z" fill="none"></path>
+    </svg>
+    <h3>Expense List</h3>
+    <div
+      cdkDropList
+      class="list-container"
+      id="list"
+      (cdkDropListDropped)="drop($event)"
+    >
+      <div
+        class="sublist-content"
+        *ngFor="let list of lists; trackBy: trackById"
+        cdkDrag
+      >
+        <div class="product">
+          <div class="product-title">{{ list.title }}</div>
+          <div class="amout">{{ list.amount }}</div>
+          <div class="delete" (click)="deleteItem(list.id)">Delete</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

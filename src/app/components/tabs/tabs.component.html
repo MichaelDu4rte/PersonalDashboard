@@ -33,6 +33,17 @@
 
   <div
     class="tab-box"
+    [routerLink]="'finance'"
+    routerLinkActive="active"
+    (click)="handleTabClick('finance')"
+  >
+    <div class="tab-title">
+      <i class="material-symbols-outlined"> attach_money </i>
+    </div>
+  </div>
+
+  <div
+    class="tab-box"
     [routerLink]="'gallery'"
     routerLinkActive="active"
     (click)="handleTabClick('gallery')"
