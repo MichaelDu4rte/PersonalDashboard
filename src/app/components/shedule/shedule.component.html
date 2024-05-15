@@ -1,5 +1,5 @@
 <div class="shedule-wrapper">
-  <!-- Monday-->
+  <!-- Monday Column -->
   <div
     class="shedule-column"
     cdkDropList
@@ -7,8 +7,17 @@
     [cdkDropListData]="mondayItem"
     [cdkDropListConnectedTo]="[monday, tuesday, wednesday, thursday, friday]"
     (cdkDropListDropped)="drop($event)"
+    cdkDrag
   >
-    <div class="shedule-column-title">Monday</div>
+    <div class="shedule-column-title">
+      Monday
+      <svg width="24px" fill="currentColor" viewBox="0 0 24 24" cdkDragHandle>
+        <path
+          d="M10 9h4V6h3l-5-5-5 5h3v3zm-1 1H6V7l-5 5 5 5v-3h3v-4zm14 2l-5-5v3h-3v4h3v3l5-5zm-9 3h-4v3H7l5 5 5-5h-3v-3z"
+        ></path>
+        <path d="M0 0h24v24H0z" fill="none"></path>
+      </svg>
+    </div>
     <div class="shedule-items">
       @for (item of mondayItem; track item) {
       <div
@@ -20,21 +29,28 @@
       </div>
       }
 
-      <div class="shedule-item-new hide" #newItem>
-        <input type="text" class="shedule-item-input" #newItemInput />
+      <div class="shedule-item-new hide" #newMondayItem>
+        <input
+          type="text"
+          class="shedule-item-input"
+          #newMondayItemInput
+          autofocus
+        />
       </div>
       <div class="shedule-dropzone"></div>
     </div>
     <button
       class="shedule-add-item"
       type="button"
-      (click)="addItem(newItemInput.value, mondayItem)"
+      (click)="
+        addItem(newMondayItemInput.value, mondayItem, newMondayItemInput)
+      "
     >
       <span>+</span> Add
     </button>
   </div>
 
-  <!-- Tuesday -->
+  <!-- Tuesday Column -->
   <div
     class="shedule-column"
     cdkDropList
@@ -42,8 +58,17 @@
     [cdkDropListData]="tuesdayItem"
     [cdkDropListConnectedTo]="[monday, tuesday, wednesday, thursday, friday]"
     (cdkDropListDropped)="drop($event)"
+    cdkDrag
   >
-    <div class="shedule-column-title">Tuesday</div>
+    <div class="shedule-column-title">
+      Tuesday
+      <svg width="24px" fill="currentColor" viewBox="0 0 24 24" cdkDragHandle>
+        <path
+          d="M10 9h4V6h3l-5-5-5 5h3v3zm-1 1H6V7l-5 5 5 5v-3h3v-4zm14 2l-5-5v3h-3v4h3v3l5-5zm-9 3h-4v3H7l5 5 5-5h-3v-3z"
+        ></path>
+        <path d="M0 0h24v24H0z" fill="none"></path>
+      </svg>
+    </div>
     <div class="shedule-items">
       @for (item of tuesdayItem; track item) {
       <div
@@ -55,14 +80,24 @@
       </div>
       }
 
-      <div class="shedule-item-new hide" #newItem>
-        <input type="text" class="shedule-item-input" #newItemInput />
+      <div class="shedule-item-new hide" #newTuesdayItem>
+        <input type="text" class="shedule-item-input" #newTuesdayItemInput />
       </div>
       <div class="shedule-dropzone"></div>
     </div>
+
+    <button
+      class="shedule-add-item"
+      type="button"
+      (click)="
+        addItem(newTuesdayItemInput.value, tuesdayItem, newTuesdayItemInput)
+      "
+    >
+      <span>+</span> Add
+    </button>
   </div>
 
-  <!-- Wednesday -->
+  <!-- Wednesday Column -->
   <div
     class="shedule-column"
     cdkDropList
@@ -70,8 +105,17 @@
     [cdkDropListData]="wednesdayItem"
     [cdkDropListConnectedTo]="[monday, tuesday, wednesday, thursday, friday]"
     (cdkDropListDropped)="drop($event)"
+    cdkDrag
   >
-    <div class="shedule-column-title">Wednesday</div>
+    <div class="shedule-column-title">
+      Wednesday
+      <svg width="24px" fill="currentColor" viewBox="0 0 24 24" cdkDragHandle>
+        <path
+          d="M10 9h4V6h3l-5-5-5 5h3v3zm-1 1H6V7l-5 5 5 5v-3h3v-4zm14 2l-5-5v3h-3v4h3v3l5-5zm-9 3h-4v3H7l5 5 5-5h-3v-3z"
+        ></path>
+        <path d="M0 0h24v24H0z" fill="none"></path>
+      </svg>
+    </div>
     <div class="shedule-items">
       @for (item of wednesdayItem; track item) {
       <div
@@ -82,11 +126,29 @@
         {{ item }}
       </div>
       }
+
+      <div class="shedule-item-new hide" #newWednesdayItem>
+        <input type="text" class="shedule-item-input" #newWednesdayItemInput />
+      </div>
       <div class="shedule-dropzone"></div>
     </div>
+
+    <button
+      class="shedule-add-item"
+      type="button"
+      (click)="
+        addItem(
+          newWednesdayItemInput.value,
+          wednesdayItem,
+          newWednesdayItemInput
+        )
+      "
+    >
+      <span>+</span> Add
+    </button>
   </div>
 
-  <!-- Thursday -->
+  <!-- Thursday Column -->
   <div
     class="shedule-column"
     cdkDropList
@@ -94,8 +156,17 @@
     [cdkDropListData]="thursdayItem"
     [cdkDropListConnectedTo]="[monday, tuesday, wednesday, thursday, friday]"
     (cdkDropListDropped)="drop($event)"
+    cdkDrag
   >
-    <div class="shedule-column-title">Thursday</div>
+    <div class="shedule-column-title">
+      Thursday
+      <svg width="24px" fill="currentColor" viewBox="0 0 24 24" cdkDragHandle>
+        <path
+          d="M10 9h4V6h3l-5-5-5 5h3v3zm-1 1H6V7l-5 5 5 5v-3h3v-4zm14 2l-5-5v3h-3v4h3v3l5-5zm-9 3h-4v3H7l5 5 5-5h-3v-3z"
+        ></path>
+        <path d="M0 0h24v24H0z" fill="none"></path>
+      </svg>
+    </div>
     <div class="shedule-items">
       @for (item of thursdayItem; track item) {
       <div
@@ -106,11 +177,25 @@
         {{ item }}
       </div>
       }
+
+      <div class="shedule-item-new hide" #newThursdayItem>
+        <input type="text" class="shedule-item-input" #newThursdayItemInput />
+      </div>
       <div class="shedule-dropzone"></div>
     </div>
+
+    <button
+      class="shedule-add-item"
+      type="button"
+      (click)="
+        addItem(newThursdayItemInput.value, thursdayItem, newThursdayItemInput)
+      "
+    >
+      <span>+</span> Add
+    </button>
   </div>
 
-  <!-- Friday -->
+  <!-- Friday Column -->
   <div
     class="shedule-column"
     cdkDropList
@@ -118,8 +203,17 @@
     [cdkDropListData]="fridayItem"
     [cdkDropListConnectedTo]="[monday, tuesday, wednesday, thursday, friday]"
     (cdkDropListDropped)="drop($event)"
+    cdkDrag
   >
-    <div class="shedule-column-title">Friday</div>
+    <div class="shedule-column-title">
+      Friday
+      <svg width="24px" fill="currentColor" viewBox="0 0 24 24" cdkDragHandle>
+        <path
+          d="M10 9h4V6h3l-5-5-5 5h3v3zm-1 1H6V7l-5 5 5 5v-3h3v-4zm14 2l-5-5v3h-3v4h3v3l5-5zm-9 3h-4v3H7l5 5 5-5h-3v-3z"
+        ></path>
+        <path d="M0 0h24v24H0z" fill="none"></path>
+      </svg>
+    </div>
     <div class="shedule-items">
       @for (item of fridayItem; track item) {
       <div
@@ -130,7 +224,21 @@
         {{ item }}
       </div>
       }
+
+      <div class="shedule-item-new hide" #newFridayItem>
+        <input type="text" class="shedule-item-input" #newFridayItemInput />
+      </div>
       <div class="shedule-dropzone"></div>
     </div>
+
+    <button
+      class="shedule-add-item"
+      type="button"
+      (click)="
+        addItem(newFridayItemInput.value, fridayItem, newFridayItemInput)
+      "
+    >
+      <span>+</span> Add
+    </button>
   </div>
 </div>

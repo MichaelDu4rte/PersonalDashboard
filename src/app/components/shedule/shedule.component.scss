@@ -13,6 +13,7 @@
      animation: animationUI 0.5s ease-in-out forwards; /* Animação */
 
 
+     
         &:not(:last-child) {
             margin-right: 60px;
         }
@@ -82,3 +83,7 @@
 .show {
     display: block;
 }
+
+svg {
+    cursor: move;
+ }

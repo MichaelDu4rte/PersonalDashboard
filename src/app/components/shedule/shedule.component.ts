@@ -1,11 +1,11 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import {CdkDrag, CdkDropList, CdkDragDrop, moveItemInArray, transferArrayItem, } from '@angular/cdk/drag-drop';
+import {CdkDrag, CdkDropList, CdkDragDrop, moveItemInArray, transferArrayItem,CdkDragHandle } from '@angular/cdk/drag-drop';
 
 
 @Component({
   selector: 'app-shedule',
   standalone: true,
-  imports: [CdkDrag, CdkDropList],
+  imports: [CdkDrag, CdkDropList, CdkDragHandle],
   templateUrl: './shedule.component.html',
   styleUrl: './shedule.component.scss'
 })
@@ -15,14 +15,16 @@ export class SheduleComponent {
   tuesdayItem = ['Go home', 'Fall asleep'];
   wednesdayItem = ['Sleep'];
   thursdayItem = ['Take a shower', 'Check e-mail', 'Walk dog'];
-  fridayItem = ['games', 'Study'];
+  fridayItem = ['Walk cat'];
   
   @ViewChild('newItemInput') newItemInput!: ElementRef<HTMLInputElement>;
 
+  
   ngOnInit() {
     this.loadItemsFromLocalStorage();
   }
 
+  // load and save local storage
   loadItemsFromLocalStorage() {
     const daysOfWeek = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'];
     daysOfWeek.forEach(day => {
@@ -41,6 +43,7 @@ export class SheduleComponent {
     });
   }
 
+  // dragging drop
   drop(event: CdkDragDrop<string[]>) {
 
     if (event.container.data.length >= 5) {
@@ -63,20 +66,24 @@ export class SheduleComponent {
 
   }
 
-  addItem(newItemValue: string, itemList: string[]) {
-    const elements = document.querySelector('.shedule-item-new');
-    elements?.classList.remove('hide');
+  // addd item
+  addItem(newItemValue: string, itemList: string[], newItemInput: HTMLInputElement) {
+    newItemInput.parentElement?.classList.remove('hide'); // Hide the input container
+    newItemInput.focus();
 
+   
     if (newItemValue.trim() !== '') {
       itemList.push(newItemValue);
-      // Limpa o input após adicionar o item
-      this.newItemInput.nativeElement.value = '';
-      elements?.classList.add('hide');
+  
+      // Reset and save
+      newItemInput.value = '';
+      newItemInput.parentElement?.classList.add('hide'); // Hide the input container
       this.saveItemsToLocalStorage();
+    } 
 
-    }
   }
   
+  // remove item and double click event
   removeItem(item: string, itemList: string[]) {
     const index = itemList.indexOf(item);
     if (index !== -1) {

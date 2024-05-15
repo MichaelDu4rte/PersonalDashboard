@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import {CdkDrag} from '@angular/cdk/drag-drop';
+import {CdkDrag, CdkDragHandle} from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-pomodoro',
   standalone: true,
-  imports: [CdkDrag],
+  imports: [CdkDrag, CdkDragHandle],
   templateUrl: './pomodoro.component.html',
   styleUrl: './pomodoro.component.scss'
 })

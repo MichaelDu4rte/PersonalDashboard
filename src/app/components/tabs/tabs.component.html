@@ -1,4 +1,5 @@
 <div class="tabs-container">
+  <!-- Bookmarks -->
   <div
     [routerLink]="'bookmarks'"
     routerLinkActive="active"
@@ -9,39 +10,8 @@
       <i class="material-icons-outlined">bookmarks</i>
     </div>
   </div>
-  <div
-    [routerLink]="'todo'"
-    routerLinkActive="active"
-    class="tab-box"
-    (click)="handleTabClick('todo')"
-  >
-    <div class="tab-title">
-      <i class="material-icons-outlined">check</i>
-    </div>
-  </div>
 
-  <div
-    class="tab-box"
-    [routerLink]="'pomodoro'"
-    routerLinkActive="active"
-    (click)="handleTabClick('pomodoro')"
-  >
-    <div class="tab-title">
-      <i class="material-symbols-outlined">timer</i>
-    </div>
-  </div>
-
-  <div
-    class="tab-box"
-    [routerLink]="'finance'"
-    routerLinkActive="active"
-    (click)="handleTabClick('finance')"
-  >
-    <div class="tab-title">
-      <i class="material-symbols-outlined"> attach_money </i>
-    </div>
-  </div>
-
+  <!-- Schedule -->
   <div
     class="tab-box"
     [routerLink]="'schedule'"
@@ -53,6 +23,43 @@
     </div>
   </div>
 
+  <!-- Pomodoro -->
+  <div
+    class="tab-box"
+    [routerLink]="'pomodoro'"
+    routerLinkActive="active"
+    (click)="handleTabClick('pomodoro')"
+  >
+    <div class="tab-title">
+      <i class="material-symbols-outlined">timer</i>
+    </div>
+  </div>
+
+  <!-- TODO -->
+  <div
+    [routerLink]="'todo'"
+    routerLinkActive="active"
+    class="tab-box"
+    (click)="handleTabClick('todo')"
+  >
+    <div class="tab-title">
+      <i class="material-icons-outlined">checklist</i>
+    </div>
+  </div>
+
+  <!-- Finance -->
+  <div
+    class="tab-box"
+    [routerLink]="'finance'"
+    routerLinkActive="active"
+    (click)="handleTabClick('finance')"
+  >
+    <div class="tab-title">
+      <i class="material-symbols-outlined"> shopping_cart </i>
+    </div>
+  </div>
+
+  <!-- Gallery -->
   <div
     class="tab-box"
     [routerLink]="'gallery'"
