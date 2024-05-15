@@ -16,6 +16,7 @@ import { GalleryComponent } from './components/gallery/gallery.component';
 })
 export class AppComponent implements OnInit {
 
+
   //date
   dateTime?: Date;
 
@@ -26,7 +27,20 @@ export class AppComponent implements OnInit {
    timer(0, 1000).subscribe(() => {
     this.dateTime = new Date();
    });
+
+   const savedBackground = localStorage.getItem('backgroundImage');
+    if (savedBackground) {
+      this.applyBackground(savedBackground);
+    }
   }
+
+  private applyBackground(imageSrc: string) {
+    const appWrapper = document.querySelector('.app-wrapper') as HTMLElement;
+    if (appWrapper) {
+      appWrapper.style.backgroundImage = `url('${imageSrc}')`;
+    }
+  }
+ 
 
   
 }

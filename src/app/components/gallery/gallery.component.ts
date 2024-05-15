@@ -10,7 +10,15 @@ import { CommonModule } from '@angular/common';
   templateUrl: './gallery.component.html',
   styleUrl: './gallery.component.scss'
 })
+
 export class GalleryComponent {
+  constructor() {
+
+    const savedIndex = localStorage.getItem('currentIndex');
+    if (savedIndex !== null) {
+      this.currentIndex = parseInt(savedIndex, 10);
+    }
+  }
 
   // images
   images = [
@@ -29,16 +37,21 @@ export class GalleryComponent {
   // next
   nextImage() {
     this.currentIndex = (this.currentIndex + 1) % this.images.length;
+    this.saveCurrentIndex(); 
+
   }
 
   //back
   backImage() {
     this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length;
+    this.saveCurrentIndex(); 
+
   }
 
+
   selectImage(index: number) {
-    // change image
     this.currentIndex = index;
+    this.saveCurrentIndex(); 
   }
 
   // key pressed
@@ -46,21 +59,31 @@ export class GalleryComponent {
   handleKeyboardEvent(event: KeyboardEvent) {
     if (event.key === 'ArrowLeft') {
       this.backImage();
+      this.saveCurrentIndex(); 
+
     } else if (event.key === 'ArrowRight') {
       this.nextImage();
+      this.saveCurrentIndex(); 
+
     }
   }
 
  
-  // setbackground
   setBackground(event: MouseEvent) {
     event.preventDefault();
     const imageSrc = this.images[this.currentIndex].url;
+    localStorage.setItem('backgroundImage', imageSrc);
+    this.applyBackground(imageSrc);
+  }
+
+  private applyBackground(imageSrc: string) {
     const appWrapper = document.querySelector('.app-wrapper') as HTMLElement;
     if (appWrapper) {
       appWrapper.style.backgroundImage = `url('${imageSrc}')`;
     }
   }
 
- 
+  private saveCurrentIndex() {
+    localStorage.setItem('currentIndex', this.currentIndex.toString());
+  }
 }

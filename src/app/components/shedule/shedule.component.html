@@ -1,0 +1,136 @@
+<div class="shedule-wrapper">
+  <!-- Monday-->
+  <div
+    class="shedule-column"
+    cdkDropList
+    #monday="cdkDropList"
+    [cdkDropListData]="mondayItem"
+    [cdkDropListConnectedTo]="[monday, tuesday, wednesday, thursday, friday]"
+    (cdkDropListDropped)="drop($event)"
+  >
+    <div class="shedule-column-title">Monday</div>
+    <div class="shedule-items">
+      @for (item of mondayItem; track item) {
+      <div
+        class="shedule-item-input"
+        (dblclick)="removeItem(item, mondayItem)"
+        cdkDrag
+      >
+        {{ item }}
+      </div>
+      }
+
+      <div class="shedule-item-new hide" #newItem>
+        <input type="text" class="shedule-item-input" #newItemInput />
+      </div>
+      <div class="shedule-dropzone"></div>
+    </div>
+    <button
+      class="shedule-add-item"
+      type="button"
+      (click)="addItem(newItemInput.value, mondayItem)"
+    >
+      <span>+</span> Add
+    </button>
+  </div>
+
+  <!-- Tuesday -->
+  <div
+    class="shedule-column"
+    cdkDropList
+    #tuesday="cdkDropList"
+    [cdkDropListData]="tuesdayItem"
+    [cdkDropListConnectedTo]="[monday, tuesday, wednesday, thursday, friday]"
+    (cdkDropListDropped)="drop($event)"
+  >
+    <div class="shedule-column-title">Tuesday</div>
+    <div class="shedule-items">
+      @for (item of tuesdayItem; track item) {
+      <div
+        class="shedule-item-input"
+        (dblclick)="removeItem(item, tuesdayItem)"
+        cdkDrag
+      >
+        {{ item }}
+      </div>
+      }
+
+      <div class="shedule-item-new hide" #newItem>
+        <input type="text" class="shedule-item-input" #newItemInput />
+      </div>
+      <div class="shedule-dropzone"></div>
+    </div>
+  </div>
+
+  <!-- Wednesday -->
+  <div
+    class="shedule-column"
+    cdkDropList
+    #wednesday="cdkDropList"
+    [cdkDropListData]="wednesdayItem"
+    [cdkDropListConnectedTo]="[monday, tuesday, wednesday, thursday, friday]"
+    (cdkDropListDropped)="drop($event)"
+  >
+    <div class="shedule-column-title">Wednesday</div>
+    <div class="shedule-items">
+      @for (item of wednesdayItem; track item) {
+      <div
+        class="shedule-item-input"
+        (dblclick)="removeItem(item, wednesdayItem)"
+        cdkDrag
+      >
+        {{ item }}
+      </div>
+      }
+      <div class="shedule-dropzone"></div>
+    </div>
+  </div>
+
+  <!-- Thursday -->
+  <div
+    class="shedule-column"
+    cdkDropList
+    #thursday="cdkDropList"
+    [cdkDropListData]="thursdayItem"
+    [cdkDropListConnectedTo]="[monday, tuesday, wednesday, thursday, friday]"
+    (cdkDropListDropped)="drop($event)"
+  >
+    <div class="shedule-column-title">Thursday</div>
+    <div class="shedule-items">
+      @for (item of thursdayItem; track item) {
+      <div
+        class="shedule-item-input"
+        (dblclick)="removeItem(item, thursdayItem)"
+        cdkDrag
+      >
+        {{ item }}
+      </div>
+      }
+      <div class="shedule-dropzone"></div>
+    </div>
+  </div>
+
+  <!-- Friday -->
+  <div
+    class="shedule-column"
+    cdkDropList
+    #friday="cdkDropList"
+    [cdkDropListData]="fridayItem"
+    [cdkDropListConnectedTo]="[monday, tuesday, wednesday, thursday, friday]"
+    (cdkDropListDropped)="drop($event)"
+  >
+    <div class="shedule-column-title">Friday</div>
+    <div class="shedule-items">
+      @for (item of fridayItem; track item) {
+      <div
+        class="shedule-item-input"
+        (dblclick)="removeItem(item, fridayItem)"
+        cdkDrag
+      >
+        {{ item }}
+      </div>
+      }
+      <div class="shedule-dropzone"></div>
+    </div>
+  </div>
+</div>

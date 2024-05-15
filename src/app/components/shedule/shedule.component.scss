@@ -1,0 +1,84 @@
+.shedule-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    border-radius: 10px;
+
+
+    .shedule-column {
+     background-color: rgba(white, 0.3);
+     backdrop-filter: blur(50px);
+     padding: 20px;
+     border-radius: 20px;
+     animation: animationUI 0.5s ease-in-out forwards; /* Animação */
+
+
+        &:not(:last-child) {
+            margin-right: 60px;
+        }
+
+        .shedule-column-title {
+            margin-bottom: 20px;
+            font-size: 30px;
+            color: #fff;
+            user-select: none;
+            text-align: center;
+        }
+
+        .shedule-item-input {
+            padding: 10px 15px;
+            background: #eaeaea;
+            cursor: pointer;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+        .shedule-dropzone {
+            height: 10px;
+            transition: all .15s;
+
+            &.active {
+                height: 20px;
+                background: rgba(black, 0.4);
+            }
+        }
+
+        .shedule-add-item {
+            width: 100%;
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            color: #fff;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            text-align: left;
+            font-size: 17px;
+
+
+            span {
+                font-size: 30px;
+                margin-right: 5px;
+            }
+
+            &:hover {
+                background: rgba(165, 163, 163, 0.2);
+            }
+        }
+
+        .shedule-item-new input {
+            outline: none;
+            border: none;
+            width: 100%;
+        }
+
+    }
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}

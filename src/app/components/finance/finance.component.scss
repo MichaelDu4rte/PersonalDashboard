@@ -8,6 +8,9 @@
     color: #333;
     border-radius: 10px;
 
+    opacity: 0; /* Começa transparente */
+    animation: animationUI 0.5s ease-in-out forwards; /* Animação */
+
     h3 {
         color: black;
         font-weight: 500;
@@ -79,7 +82,7 @@
 
     .list {
         background-color: rgba(white, 0.9);
-        backdrop-filter: blur(10px);        
+        backdrop-filter: blur(20px);        
         padding: 1.8em 1.2em;
         box-shadow:  0 .6em 1em rgba(28, 0, 0.8, 0.06);
         border-radius: 10px;
