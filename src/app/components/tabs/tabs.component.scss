@@ -99,4 +99,8 @@
 }
 
 
-  
+@media screen and (max-width: 768px) {
+    #schedule, #finance {
+        display: none;
+    }
+}
