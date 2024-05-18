@@ -25,10 +25,14 @@ export class GalleryComponent {
     { id: 1, url: 'https://images8.alphacoders.com/128/1281520.jpg' },
     { id: 2, url: 'https://images.alphacoders.com/113/1138740.png' },
     { id: 3, url: 'https://images6.alphacoders.com/122/1224149.png' },
-    { id: 4, url: 'https://images8.alphacoders.com/105/1055726.png' },
     { id: 5, url: 'https://images7.alphacoders.com/113/1130461.png' },
-    { id: 6, url: 'https://giffiles.alphacoders.com/210/210726.gif' },
-    { id: 7, url: 'https://giffiles.alphacoders.com/168/168285.gif' },
+    { id: 6, url: 'https://images4.alphacoders.com/100/1008904.png' },
+    { id: 7, url: 'https://images5.alphacoders.com/941/941959.png' },
+    { id: 8, url: 'https://images7.alphacoders.com/120/1205979.png' },
+    { id: 9, url: 'https://images7.alphacoders.com/975/975991.png' },
+    { id: 10, url: 'https://images7.alphacoders.com/112/1123555.png' },
+    { id: 11, url: 'https://giffiles.alphacoders.com/210/210726.gif' },
+    { id: 12, url: 'https://giffiles.alphacoders.com/168/168285.gif' },
   ];
 
   // index image
