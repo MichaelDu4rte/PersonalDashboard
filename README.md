@@ -1,27 +1,24 @@
-# DashboardPersonal
+# PersonalDashboard - Criado para auxiliar nos estudos e tarefas do dia a dia
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.6.
+## Apresentação
 
-## Development server
+![alt text](https://i.imgur.com/yf22opC.png)
+![alt text](https://i.imgur.com/MYHap3l.png)
+![alt text](https://i.imgur.com/13haLYI.png)
+![alt text](https://i.imgur.com/d9tKGMT.png)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Funcionalidades
+- Calendario de ativades da semana
+- Pomodoro para controle de horas, minutos
+- Calculo de financias para facilitar controle de despesas
+- Possibilidade de mudança do background
+- Liberdade para posicionar as telas do jeito que o usario querer
 
-## Code scaffolding
+## Tecnologias
+- Angular
+- Typescript
+- Scss
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Autores
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- [@MichaelDu4rte](https://github.com/MichaelDu4rte)
